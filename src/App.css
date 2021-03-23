@@ -1,0 +1,173 @@
+.myheading
+{
+  color: red;
+  margin: 10px;
+  font-size: 60px;
+}
+
+
+.productInfoDiv
+{
+  height: 800px;
+}
+
+.productImage
+{
+  width: 80%;
+  height: 400px;
+  margin-top: 50px;
+}
+
+.secondDivProduct
+{
+  padding: 50px;
+
+}
+
+.avoffer
+{
+  margin-top: 20px;
+}
+
+.buyNowButton
+{
+  background-color: #FB641B;
+  border-radius: 5px;
+  color: white;
+  margin-top: 10px;
+  margin-left: -75px;
+  border: 0px solid black;
+  font-weight:bolder;
+  width: 150px;
+  padding: 10px;
+}
+
+.addTocartButton
+{
+  background-color: #FF9F00;
+  border-radius: 5px;
+  color: white;
+  margin-top: 10px;
+  margin-left: 60px;
+  border: 0px solid black;
+  font-weight: bolder;
+  width: 150px;
+  padding: 10px;
+
+}
+
+.place_order_btn
+{
+  margin: 40px;
+}
+
+.my_login_div
+{
+  margin-top: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 370px;
+  padding: 10px;
+}
+
+.my_register_div
+{
+  margin-top: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 615px;
+  padding: 10px;
+}
+
+
+.usestate
+{
+margin-top: 100px;
+}
+
+.Sign_Up
+{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.My_link
+{
+  margin-left: 250px;
+}
+
+.prodes
+{
+    font-style: italic;
+    
+}
+
+.title
+{
+  margin-top: 10px;
+  margin-left: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+}
+
+.my_Card
+{
+color: black;
+margin: 10px;
+}
+
+.My_background
+{
+  background: url(./Images/Pic.jpg);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 655px;
+}
+
+.forum
+{
+  text-align: left;
+  margin-top: 30px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+}
+
+.myproduct_insert_div
+{
+  margin-top: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding:20px;
+  height: 490px;
+}
+
+.insert_myproduct
+{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.mycategory_insert_div
+{
+  margin-top: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding:20px;
+  height: 405px;
+}
+
+.insert_mycategory
+{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.successmsg
+{
+  margin-top:30px;
+}
+
+.datamsg
+{
+  margin-top:30px;
+}
