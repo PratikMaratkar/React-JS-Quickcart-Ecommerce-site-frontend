@@ -7,7 +7,50 @@ export default function Insert_category() {
 
     const [myvalues,setMyvalues] = useState({name:'',description:''});
 
-    const { name, description } = myvalues;  
+
+    const mySuccessDiv = () =>
+      {
+        return(<div className="row">
+
+          <div className="col-lg-4"></div>
+          <div  className="col-lg-4 datamsg">
+              <div className="alert alert-success">Category Added Successfully!!!</div>
+          </div>
+
+        </div>);
+      }
+
+    const { name, description, error, errorMSG, success } = myvalues;
+    
+    
+    const myErrorDiv = () =>
+    {
+      return(<div className="row">
+
+        <div className="col-lg-4"></div>
+          <div className="col-lg-4">
+            <div className="alert alert-danger"> Error : Cannot Add Category!!!
+              <p>
+                {errorMSG}
+              </p>
+            </div>
+          </div>
+
+      </div>);
+    }
+
+
+    const myMsgDiv = () =>
+    {
+      if(error === true)
+        {
+          return myErrorDiv();
+        }
+          else if(success === true)
+        {
+          return mySuccessDiv();
+        }
+    }
 
     const handleChange = input_type_name => e => 
     {
@@ -18,20 +61,26 @@ export default function Insert_category() {
     const onSubmit = event =>
     {
      event.preventDefault();
+
+     setMyvalues({ ...myvalues, error: false });
      
      Function_insert_category({ name, description })
        .then(data => 
           {
-         if (data.error) 
+        if (data.error) 
          {
-            console.log('error is there');
-            //    setValues({ ...myvalues, error: data.error, success: false });
+            setMyvalues({ ...myvalues, error: true, errorMSG:data.error, success: false, });
+         } 
+         else if (data.err)
+         {
+            setMyvalues({ ...myvalues, error: true, errorMSG:data.err, success: false, });
          } 
          else 
          {
+            setMyvalues({ ...myvalues, success: true });
             //   updatedatafromBackendadd(data);
             console.log(data);
-            setMyvalues({...myvalues,name: "",description: "",});
+            setMyvalues({...myvalues,name: "",description: "",error: false,success: true});
          }
        })
    };
@@ -40,7 +89,7 @@ export default function Insert_category() {
     return (
         <div>
             <Navbar_component/>
-
+            {myMsgDiv()}
             <div className="row">
 
             <div className="col-lg-4 "></div>
@@ -51,12 +100,12 @@ export default function Insert_category() {
 
                             <div className="form-group">
                                 <label>Category Name <span className="text-danger">*</span> </label>
-                                <input placeholder="Enter Category Name" onKeyUp={handleChange("name")} type="text" className="form-control"/>
+                                <input placeholder="Enter Category Name" value={name} onChange={handleChange("name")} type="text" className="form-control"/>
                             </div>
 
                             <div className="form-group">
                                 <label>Category Description <span className="text-danger">*</span> </label>
-                                <textarea className="form-control" onKeyUp={handleChange("description")} rows="5"></textarea>
+                                <textarea className="form-control" value={description} onChange={handleChange("description")} rows="5"></textarea>
                             </div>
 
                             <div className="form-group">

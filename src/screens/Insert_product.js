@@ -27,7 +27,7 @@ export default function Insert_product() {
 
         <div className="col-lg-4"></div>
           <div className="col-lg-4">
-            <div className="alert alert-danger"> cannot add product!!!
+            <div className="alert alert-danger"> Error : Cannot Add Product!!!
               <p>
                 {errorMSG}
               </p>
@@ -61,6 +61,7 @@ export default function Insert_product() {
      event.preventDefault();
 
      setMyvalues({ ...myvalues, error: false });
+     
      Function_insert_product({ name, description, price ,category })
        .then(data => 
           {
@@ -87,27 +88,27 @@ export default function Insert_product() {
         <div>
             <Navbar_component/>
             {myMsgDiv()}
-            <div className="row">
+            <div className="row" >
 
             <div className="col-lg-4 "></div>
-                <div className="col-lg-4  text-black" >
+                <div className="col-lg-4  text-black " >
 
                     <div className="myproduct_insert_div">
                         <h1 className="text-center insert_myproduct">Add Product</h1>
 
                             <div className="form-group">
                                 <label>Product Name <span className="text-danger">*</span> </label>
-                                <input placeholder="Enter Product Name" onKeyUp={handleChange("name")} type="text" className="form-control"/>
+                                <input placeholder="Enter Product Name" value={name} onChange={handleChange("name")} type="text" className="form-control"/>
                             </div>
 
                             <div className="form-group">
                                 <label>Product Description <span className="text-danger">*</span> </label>
-                                <textarea className="form-control" onKeyUp={handleChange("description")} rows="5"></textarea>
+                                <textarea className="form-control" value={description} onChange={handleChange("description")} rows="5"></textarea>
                             </div>
 
                             <div className="form-group">
                                 <label>Product Price <span className="text-danger">*</span> </label>
-                                <input placeholder="Enter Product Price " onKeyUp={handleChange("price")} type="number" step="any"  className="form-control"/>
+                                <input placeholder="Enter Product Price " value={price} onChange={handleChange("price")} type="number" step="any"  className="form-control"/>
                             </div>
 
                             <div className="form-group">

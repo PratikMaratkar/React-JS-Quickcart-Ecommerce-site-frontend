@@ -112,26 +112,23 @@ margin-top: 100px;
 .my_Card
 {
 color: black;
-margin: 10px;
-}
-
-.My_background
-{
-  background: url(./Images/Pic.jpg);
-  background-position: center; 
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 655px;
+margin-left: 10px;
 }
 
 .forum
 {
   text-align: left;
   margin-top: 30px;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
-  color: white;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.My_background
+{
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .myproduct_insert_div

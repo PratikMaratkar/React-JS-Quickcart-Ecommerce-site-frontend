@@ -18,7 +18,7 @@ function Navbar_component()
     }
 
     return(<div>
-        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar bg="dark" variant="dark">
             <Navbar.Brand href="/"  > <b>QUICKCART</b>  </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -32,6 +32,7 @@ function Navbar_component()
                     <Link className={"nav-link " + MyActiveClass("/ContactUs")}  to="/ContactUs"> Contact Us </Link>
                     <Link className={"nav-link " + MyActiveClass("/Insert_product")}  to="/Insert_product">Insert Product </Link>
                     <Link className={"nav-link " + MyActiveClass("/Insert_category")}  to="/Insert_category">Insert Category </Link>
+                    <Link className={"nav-link " + MyActiveClass("/testing")}  to="/testing">Testing </Link>
                 </Nav>
                 
             </Navbar.Collapse>

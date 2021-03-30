@@ -9,6 +9,7 @@ import Register from './screens/Register';
 import Insert_product from './screens/Insert_product';
 import Insert_category from './screens/Insert_category';
 import ContactUs from './screens/ContactUs';
+import Testing from './screens/Testing';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
@@ -27,6 +28,7 @@ const routing = (<BrowserRouter>
                 <Route path="/Mycart"  component={Mycart} />
                 <Route path="/Insert_product"  component={Insert_product} />
                 <Route path="/Insert_category"  component={Insert_category} />
+                <Route path="/testing"  component={Testing} />
                 <Route component={ContactUs} ></Route>
         </Switch>
   </BrowserRouter>

@@ -3,13 +3,29 @@ import Navbar_component from '../Components/Navbar_component';
 import Image_slider from '../Components/Image_slider';
 import My_card_component from '../Components/My_card_component';
 import productImage from '../Images/product.jpg';
-import productImage2 from '../Images/product2.jpg';
-import {getAllProducts} from '../screens/API';
-
+import {getAllproducts} from '../screens/API';
 import '../App.css';
+
 function Home()
 {
-         
+     const [products, setproducts] = useState([]);
+
+     const preload = () => 
+     {
+            getAllproducts().then(data => {
+           if (data.error) {
+             console.log(data.error);
+           } else {
+            setproducts(data);
+           }
+         });
+       };
+     
+       useEffect(() => {
+         preload();
+       }, []);
+       
+       
     return(<div>
         <Navbar_component />
         <Image_slider />
@@ -17,8 +33,21 @@ function Home()
         <h2 className=" title ">Top Trending Products</h2>
         <hr></hr>
 
-
         <div className="row">
+                      {products.map((products, index) => {
+                            return (
+                            
+                            <div className="col-lg-2">
+
+                            <My_card_component product_image="https://images.unsplash.com/photo-1590935217281-8f102120d683?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" product_name={products.name} product_price={products.price} product_description={products.description}/>
+   
+                                   </div>
+                            );
+                             })}
+
+
+
+        {/*<div className="row">
                 <div className="col-lg-2 my_card">
                      <My_card_component product_image={productImage} product_name="Redmi Note 9 Pro Max" product_price="₹18,999 only " product_description="Interstellar Black, 6GB RAM, 64GB Storage - 64MP Quad Camera & Alexa Hands-Free"/>
                 </div>
@@ -49,11 +78,12 @@ function Home()
 
                 <div className="col-lg-2">
                      <My_card_component product_image={productImage} product_name="abc" product_price="₹1,860" product_description="ColorBlack, GreenOuter material"/>
-                </div>
+                </div> */}
 
         </div>
 
-    </div>);
+    </div>
+    );
 }
 
 export default Home;
